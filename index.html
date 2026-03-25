@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voidforge Shrine</title>
+    <meta
+      name="description"
+      content="A dark fantasy Roblox donation website where free clicks build damage and gifting 1_xLow in PLS DONATE powers boss kills."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="backdrop-grid"></div>
+    <div class="orb-field" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="orb orb-d"></span>
+      <span class="orb orb-e"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" id="brand-title">Voidforge Shrine</a>
+      <nav class="site-nav">
+        <a href="#top">Home</a>
+        <a href="#experience-shell">Experience</a>
+        <a href="#donation-anchor">Donations</a>
+      </nav>
+      <a class="header-action" id="header-donate-link" href="#" target="_blank" rel="noreferrer">
+        Open PLS DONATE
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy glass-panel">
+          <p class="eyebrow">Dark fantasy Roblox damage shrine</p>
+          <h1>Click for free power. Gift <span>@1_xLow</span> to crack boss health bars.</h1>
+          <p class="hero-text" id="hero-description">
+            Loading the tracked realm, live passes, and donation hub.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" id="pls-donate-link" href="#" target="_blank" rel="noreferrer">
+              Gift in PLS DONATE
+            </a>
+            <button class="button secondary" type="button" data-tab-target="donation">
+              Open donation tab
+            </button>
+          </div>
+
+          <div class="formula-banner" id="formula-banner">
+            Free mode: 1 click = 1 damage. Gift mode: 1 Robux = 1 permanent damage.
+          </div>
+
+          <div class="hero-message">
+            <strong>How it works:</strong>
+            Go into <span id="donation-hub-name">PLS DONATE</span>, gift <span id="donation-target">@1_xLow</span>,
+            or use the donation tab below to open the direct passes.
+          </div>
+        </div>
+
+        <div class="hero-stage glass-panel">
+          <div class="rift-stage">
+            <div class="rift-core"></div>
+            <div class="rift-ring ring-one"></div>
+            <div class="rift-ring ring-two"></div>
+            <div class="rift-ring ring-three"></div>
+            <div class="rift-spark spark-a"></div>
+            <div class="rift-spark spark-b"></div>
+            <div class="rift-spark spark-c"></div>
+          </div>
+
+          <div class="hero-stats">
+            <article class="stat-card">
+              <span>Live passes</span>
+              <strong id="stat-total-passes">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Highest gift</span>
+              <strong id="stat-highest-gift">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>All boosts stacked</span>
+              <strong id="stat-stack-total">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Target user</span>
+              <strong id="stat-target">@1_xLow</strong>
+            </article>
+          </div>
+
+          <div class="tracked-realm-card">
+            <img id="game-icon" alt="Tracked realm icon" />
+            <div>
+              <p class="panel-label">Tracked realm</p>
+              <h2 id="game-name">40 percent method</h2>
+              <p id="game-meta">Loading tracked realm data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience-shell section-shell" id="experience-shell">
+        <div class="tab-switch">
+          <button class="tab-button active" type="button" data-tab-target="raid">
+            Game tab
+          </button>
+          <button class="tab-button" type="button" data-tab-target="donation" id="donation-anchor">
+            Donation tab
+          </button>
+        </div>
+
+        <section class="tab-panel active" data-tab-panel="raid">
+          <div class="section-heading">
+            <p class="eyebrow">Game tab</p>
+            <h2>Free players build damage with clicks, then test it against detailed boss encounters.</h2>
+          </div>
+
+          <div class="raid-grid">
+            <article class="clicker-panel glass-panel">
+              <p class="eyebrow">Free click forge</p>
+              <h3>Every click on the forge banks <span>1 free damage</span>.</h3>
+              <p class="section-copy" id="free-track-copy">
+                Loading free progression details.
+              </p>
+
+              <button class="click-orb" id="click-orb" type="button" aria-label="Forge 1 damage">
+                <span class="click-orb-shell">
+                  <span class="click-orb-core"></span>
+                  <span class="click-orb-text">Strike</span>
+                </span>
+              </button>
+
+              <div class="clicker-grid">
+                <article class="mini-stat">
+                  <span>Clicks made</span>
+                  <strong id="free-clicks">0</strong>
+                </article>
+                <article class="mini-stat">
+                  <span>Damage banked</span>
+                  <strong id="free-damage-bank">0</strong>
+                </article>
+              </div>
+
+              <p class="section-copy" id="free-path-note">
+                Tap the forge to begin charging your free run.
+              </p>
+
+              <button class="text-button" id="reset-clicks" type="button">
+                Reset free clicks
+              </button>
+            </article>
+
+            <article class="boss-stage glass-panel">
+              <div class="boss-visual" id="boss-visual">
+                <div class="boss-visual-core"></div>
+                <div class="boss-visual-ring boss-ring-a"></div>
+                <div class="boss-visual-ring boss-ring-b"></div>
+                <div class="boss-visual-ring boss-ring-c"></div>
+                <div class="boss-emblem" id="boss-emblem">I</div>
+              </div>
+
+              <div class="boss-copy">
+                <div class="boss-head">
+                  <div>
+                    <p class="panel-label">Selected boss</p>
+                    <h3 id="selected-boss-name">Loading boss...</h3>
+                  </div>
+                  <div class="danger-pill" id="selected-boss-tier">Tier I</div>
+                </div>
+
+                <p class="battle-story" id="selected-boss-story">
+                  The boss story is loading.
+                </p>
+                <p class="battle-detail" id="selected-boss-arena">
+                  Arena data is loading.
+                </p>
+                <p class="battle-detail" id="selected-boss-reward">
+                  Reward data is loading.
+                </p>
+
+                <div class="meter">
+                  <div class="meter-fill" id="boss-meter"></div>
+                </div>
+
+                <div class="battle-metrics">
+                  <article>
+                    <span>Boss HP</span>
+                    <strong id="metric-boss-hp">0</strong>
+                  </article>
+                  <article>
+                    <span>Free-only hits</span>
+                    <strong id="metric-free-hits">0</strong>
+                  </article>
+                  <article>
+                    <span>Gifted hits</span>
+                    <strong id="metric-boosted-hits">0</strong>
+                  </article>
+                  <article>
+                    <span>Total hit damage</span>
+                    <strong id="metric-hit-damage">0</strong>
+                  </article>
+                </div>
+
+                <div class="selector-row">
+                  <label class="selector-label" for="pass-select">Preview a gift amount</label>
+                  <select id="pass-select"></select>
+                </div>
+
+                <div class="selected-pass-box">
+                  <p class="panel-label">Selected gift</p>
+                  <h3 id="selected-pass-name">Loading gift...</h3>
+                  <p id="selected-pass-copy">
+                    Pass preview is loading.
+                  </p>
+                </div>
+
+                <button class="button secondary wide-button" type="button" data-tab-target="donation">
+                  Open donation tab
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="boss-roster" id="boss-list"></div>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="donation">
+          <div class="section-heading">
+            <p class="eyebrow">Donation tab</p>
+            <h2>Use PLS DONATE to gift <span id="donation-target-secondary">@1_xLow</span>, or open direct passes below.</h2>
+            <p class="section-copy">
+              The donation board updates when Roblox sends purchase events to the webhook.
+            </p>
+          </div>
+
+          <div class="donation-hero-grid">
+            <article class="donation-cta glass-panel">
+              <p class="eyebrow">Gift flow</p>
+              <h3>Open PLS DONATE, find <span id="donation-target-tertiary">@1_xLow</span>, and gift any amount.</h3>
+              <div class="step-list">
+                <div class="step-item">
+                  <strong>01</strong>
+                  <p>Join PLS DONATE and search for the stand owned by 1_xLow.</p>
+                </div>
+                <div class="step-item">
+                  <strong>02</strong>
+                  <p>Gift a listed amount so it becomes matching boss damage on the site.</p>
+                </div>
+                <div class="step-item">
+                  <strong>03</strong>
+                  <p>If you want direct links, use the pass vault lower on this tab.</p>
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a
+                  class="button primary"
+                  id="pls-donate-link-secondary"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open PLS DONATE
+                </a>
+                <a class="button secondary" id="profile-link" href="#" target="_blank" rel="noreferrer">
+                  View profile
+                </a>
+              </div>
+            </article>
+
+            <article class="realm-panel glass-panel">
+              <p class="eyebrow">Tracked game</p>
+              <h3>The game data still powers the boss scaling, but donations live here.</h3>
+              <p class="section-copy">
+                The site tracks the live passes from <span id="tracked-game-name-inline">40 percent method</span>,
+                while the main action for donors is gifting inside PLS DONATE.
+              </p>
+              <div class="realm-points">
+                <div>
+                  <span>Creator</span>
+                  <strong id="realm-creator">@1_xLow</strong>
+                </div>
+                <div>
+                  <span>Visits</span>
+                  <strong id="realm-visits">0</strong>
+                </div>
+                <div>
+                  <span>Live players</span>
+                  <strong id="realm-playing">0</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="donation-layout">
+            <article class="donation-panel glass-panel">
+              <div class="donation-panel-head">
+                <div>
+                  <p class="panel-label">Leaderboard</p>
+                  <h3>Top supporters</h3>
+                </div>
+                <div class="status-pill" id="donation-status">Waiting for webhook</div>
+              </div>
+              <div class="leaderboard-list" id="leaderboard-list"></div>
+            </article>
+
+            <article class="donation-panel glass-panel">
+              <div class="donation-panel-head">
+                <div>
+                  <p class="panel-label">Live feed</p>
+                  <h3>Recent gifts</h3>
+                </div>
+              </div>
+              <div class="activity-list" id="activity-list"></div>
+            </article>
+          </div>
+
+          <div class="vault-shell glass-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">Direct pass vault</p>
+              <h2>Open the exact pass you want, or preview it back in the game tab.</h2>
+              <p class="section-copy">
+                Every live pass below is mapped as a damage factor with the same Robux value.
+              </p>
+            </div>
+            <div class="shop-grid" id="pass-grid"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell glass-panel">
+      <p id="footer-copy">
+        Loading live Roblox creator, tracked game, and donation hub data.
+      </p>
+    </footer>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
